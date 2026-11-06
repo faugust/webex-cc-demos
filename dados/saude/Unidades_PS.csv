@@ -1,0 +1,4 @@
+unidade_id,nome,endereco,tempo_espera_min,pediatria,status
+UN_PAULISTA,Paulista,Av. Paulista 1000 - Bela Vista,12,SIM,ABERTO
+UN_MOEMA,Moema,Av. Ibirapuera 2500 - Moema,35,SIM,ABERTO
+UN_MORUMBI,Morumbi,Av. Giovanni Gronchi 4500 - Morumbi,8,NAO,ABERTO

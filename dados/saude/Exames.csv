@@ -1,0 +1,7 @@
+id_exame,id_paciente,nome_exame,data_coleta,unidade,medico_solicitante,status,previsao_resultado,resumo,link_laudo
+EX-0001,PAC-0001,Hemograma completo,2026-11-03,Paulista,Dr. Ricardo Lima,PRONTO,2026-11-04,Resultados dentro dos valores de referência.,https://faugust.github.io/webex-cc-demos/saude/laudo.html?id=EX-0001
+EX-0002,PAC-0001,Perfil lipídico (colesterol),2026-11-03,Paulista,Dr. Ricardo Lima,PRONTO,2026-11-04,LDL levemente acima da referência; levar ao médico na consulta.,https://faugust.github.io/webex-cc-demos/saude/laudo.html?id=EX-0002
+EX-0003,PAC-0001,Ecocardiograma,2026-11-05,Paulista,Dr. Ricardo Lima,EM_ANALISE,2026-11-09,Exame realizado; laudo em elaboração pelo cardiologista.,
+EX-0004,PAC-0002,Raio-X de tórax,2026-10-30,Moema,Dra. Paula Mendes,PRONTO,2026-10-31,Sem alterações significativas.,https://faugust.github.io/webex-cc-demos/saude/laudo.html?id=EX-0004
+EX-0005,PAC-0002,Glicemia de jejum,2026-11-05,Moema,Dra. Paula Mendes,EM_ANALISE,2026-11-07,Amostra em processamento no laboratório.,
+EX-0006,PAC-0003,TSH e T4 livre,2026-11-02,Morumbi,Dra. Camila Rocha,PRONTO,2026-11-03,Resultados dentro dos valores de referência.,https://faugust.github.io/webex-cc-demos/saude/laudo.html?id=EX-0006

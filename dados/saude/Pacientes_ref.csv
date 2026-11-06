@@ -1,0 +1,4 @@
+id_paciente,nome,cpf,convenio,carteirinha
+PAC-0001,Maria Oliveira,12345678909,Unimed,0012345678
+PAC-0002,João Santos,03736599978,Bradesco Saúde,7788990011
+PAC-0003,Ana Lopes,11144477735,Unimed,

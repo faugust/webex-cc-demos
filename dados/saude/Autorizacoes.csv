@@ -1,0 +1,5 @@
+id_autorizacao,id_paciente,numero_guia,procedimento,convenio_id,data_solicitacao,status,previsao_resposta,validade,observacao
+AUT-0001,PAC-0001,GUIA-884512,Ressonância magnética de joelho,CONV_UNIMED,2026-11-04,EM_ANALISE,2026-11-10,,Em análise pela auditoria médica do convênio.
+AUT-0002,PAC-0001,GUIA-884377,Ecocardiograma,CONV_UNIMED,2026-10-28,AUTORIZADA,,2026-12-27,Autorizado. Pode agendar o exame.
+AUT-0003,PAC-0002,GUIA-771230,Cateterismo cardíaco,CONV_BRADESCO,2026-11-02,PENDENTE_DOCUMENTO,,,Falta o pedido médico assinado e o relatorio clínico.
+AUT-0004,PAC-0003,GUIA-660981,Fisioterapia (10 sessões),CONV_UNIMED,2026-10-25,NEGADA,,,Negado por carência contratual até 2027-01-15.

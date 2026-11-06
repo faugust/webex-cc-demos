@@ -1,0 +1,6 @@
+id_fatura,id_paciente,descricao,valor,vencimento,status,linha_digitavel,link_boleto
+FAT-0001,PAC-0001,Coparticipação consulta cardiologia,45.00,2026-11-20,EM_ABERTO,23790.00009 01000.000001 00000.045006 1 99990000004500,https://faugust.github.io/webex-cc-demos/saude/boleto.html?id=FAT-0001
+FAT-0002,PAC-0001,Coparticipação exames laboratoriais,82.50,2026-10-30,VENCIDO,23790.00009 01000.000002 00000.082502 4 99820000008250,https://faugust.github.io/webex-cc-demos/saude/boleto.html?id=FAT-0002
+FAT-0003,PAC-0001,Coparticipação pronto-socorro,30.00,2026-09-15,PAGO,,
+FAT-0004,PAC-0002,Internação particular (2 diárias),3450.00,2026-11-25,EM_ABERTO,23790.00009 01000.000004 00003.450004 7 99990000345000,https://faugust.github.io/webex-cc-demos/saude/boleto.html?id=FAT-0004
+FAT-0005,PAC-0003,Consulta particular — endocrinologia,380.00,2026-11-12,EM_ABERTO,23790.00009 01000.000005 00000.380005 2 99910000038000,https://faugust.github.io/webex-cc-demos/saude/boleto.html?id=FAT-0005

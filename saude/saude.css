@@ -101,3 +101,16 @@
 .site-footer { background: #0f2533; color: #b8c7d1; font-size: .85rem; padding: 26px 0 80px; }
 .footer-in { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 .disclaimer { color: #f2c27d; }
+
+/* Laudo / boleto */
+.doc-page { min-height: calc(100vh - 68px); }
+.doc { max-width: 640px; margin: 0 auto; }
+.doc-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 18px; }
+.doc-head h1 { font-size: 1.6rem; margin: 2px 0 0; }
+.doc-grid { display: grid; grid-template-columns: max-content 1fr; gap: 8px 18px; margin: 0 0 20px; font-size: .95rem; }
+.doc-grid dt { color: var(--ink-3); }
+.doc-grid dd { margin: 0; font-weight: 600; }
+.doc h3 { font-size: 1rem; margin-top: 8px; }
+.linha { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; background: var(--bg-soft); padding: 10px 12px; border-radius: 10px; }
+.linha code { font-size: .9rem; word-break: break-all; flex: 1; min-width: 0; }
+.barcode { height: 56px; margin: 14px 0; background: repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 4px, var(--ink) 4px 5px, transparent 5px 8px, var(--ink) 8px 11px, transparent 11px 12px); border-radius: 2px; }
