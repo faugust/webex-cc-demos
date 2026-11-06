@@ -38,7 +38,7 @@ window.DEMO_CONFIG = {
        Campos enviados: nome, telefone, telefoneE164, documento, motivo,
        motivoDescricao, observacao, contexto, vertical, marca, origem, enviadoEm */
     callback: {
-      webhookUrl: '',
+      webhookUrl: 'https://hooks.us.webexconnect.io/events/XSI5XJMP8A', // fluxo WEB_Callback_Portal
       camposFixos: { canalOrigem: 'portal-web' }, // vão em todo POST
       fallbackNoCors: true, // se o webhook bloquear CORS, reenvia sem ler a resposta
     },
@@ -152,7 +152,8 @@ window.DEMO_CONFIG = {
       roteiro: [
         { passo: 'Ligue para a central (QR code) ou peça um humano no WhatsApp.' },
         { passo: 'No WhatsApp, a IA transfere com o contexto da conversa.', fala: 'O atendente não pergunta de novo o que a IA já sabe.' },
-        { passo: 'Receber ligação: disponível quando o webhook de callback estiver configurado.' },
+        { passo: 'Ou clique em "Receber uma ligação", use "Preencher com persona" e coloque SEU celular.', fala: 'O pedido vira um callback na fila do Webex CC.' },
+        { passo: 'Fique disponível no Agent Desktop: o Webex CC liga para você e mostra nome, CPF e motivo do formulário.' },
       ],
     },
   ],
