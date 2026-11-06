@@ -8,7 +8,7 @@ window.DEMO_CONFIG = {
   marca: {
     nome: 'Hospital Vida Plena',
     tituloAba: 'Cuidado completo, 24h',
-    telefoneExibicao: '(11) 4000-0000', // texto do topo do site
+    telefoneExibicao: '+1 (209) 379-8323', // texto do topo do site
   },
 
   // Aparece no topo do painel "Roteiro da demo"
@@ -29,8 +29,8 @@ window.DEMO_CONFIG = {
 
     /* 2) VOZ — número de entrada (DN) mapeado no Webex CC para o fluxo de saúde */
     telefone: {
-      numero: '',     // como exibir, ex.: '(11) 4000-0000'
-      discagem: '',   // com DDI, ex.: '+551140000000'
+      numero: '+1 (209) 379-8323', // entry point "Mais Saude" -> fluxo MaisSaude
+      discagem: '+12093798323',
     },
 
     /* 3) CALLBACK — Webhook de entrada do Webex Connect (Inbound Webhook)
@@ -45,7 +45,7 @@ window.DEMO_CONFIG = {
 
     /* 4) WHATSAPP — número conectado ao Webex Connect (só dígitos com DDI) */
     whatsapp: {
-      numero: '', // ex.: '5511900000000'
+      numero: '14083006708', // app "CIsco Live Demo" (serviço Cisco_Brasil) no Webex Connect
     },
   },
 
