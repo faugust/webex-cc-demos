@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Código OAuth · Demo Hub</title>
+  <meta name="robots" content="noindex">
+  <style>
+    :root { --ink:#12222e; --muted:#4a5b68; --line:#e2e9ec; --brand:#1d6fe0; --bg:#f5f7fb; }
+    body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background:var(--bg); color:var(--ink); }
+    main { max-width:560px; margin:48px auto; padding:0 16px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px; }
+    h1 { font-size:1.3rem; margin:0 0 8px; }
+    p { color:var(--muted); line-height:1.5; }
+    code { display:block; word-break:break-all; background:var(--bg); border-radius:10px; padding:12px; font-size:.9rem; margin:12px 0; }
+    button { font:inherit; font-weight:600; border:0; border-radius:999px; padding:.6em 1.1em; background:var(--brand); color:#fff; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="card" id="box"><p>Lendo o retorno do Webex…</p></div>
+  </main>
+  <script>
+    // Página de retorno (redirect URI) da integração OAuth do Webex.
+    // Só exibe o código de autorização para você colar no terminal.
+    // Nada é enviado para lugar nenhum a partir desta página.
+    const p = new URLSearchParams(location.search);
+    const box = document.getElementById('box');
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    if (p.get('code')) {
+      box.innerHTML = '<h1>Autorização concluída</h1><p>Copie o código abaixo e cole no terminal, onde o script está esperando. Ele vale por poucos minutos.</p><code id="c">' + esc(p.get('code')) + '</code><button id="b">Copiar código</button>';
+      document.getElementById('b').onclick = async (e) => { try { await navigator.clipboard.writeText(p.get('code')); e.target.textContent = 'Copiado'; } catch (_) {} };
+      history.replaceState(null, '', location.pathname); // tira o código da barra de endereço
+    } else if (p.get('error')) {
+      box.innerHTML = '<h1>Autorização recusada</h1><p>' + esc(p.get('error_description') || p.get('error')) + '</p>';
+    } else {
+      box.innerHTML = '<h1>Nenhum código recebido</h1><p>Abra esta página pelo link de autorização gerado pelo script <b>tools/wxcc-token.sh</b>.</p>';
+    }
+  </script>
+</body>
+</html>
