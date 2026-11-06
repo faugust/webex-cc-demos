@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo Hub Contact Center</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    :root { --brand: #1d6fe0; --brand-2: #0b1f3a; }
+    body { background: #f5f7fb; }
+    .hub-hero { background: var(--brand-2); color: #fff; padding: 56px 0 72px; }
+    .hub-hero .eyebrow { color: #7fb4ff; }
+    .hub-hero h1 { font-size: clamp(1.9rem, 4.5vw, 2.8rem); font-weight: 800; max-width: 18em; }
+    .hub-hero p { color: #b9c8de; max-width: 40em; font-size: 1.05rem; }
+    .grid { display: grid; gap: 16px; margin-top: -40px; grid-template-columns: 1fr; }
+    @media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1000px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .vcard {
+      background: #fff; border-radius: 18px; padding: 22px; border: 1px solid var(--line);
+      box-shadow: var(--shadow); text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px;
+      transition: transform .15s, border-color .15s;
+    }
+    a.vcard:hover { transform: translateY(-3px); border-color: var(--vc, var(--brand)); }
+    .vcard .vi { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; color: #fff; background: var(--vc, var(--brand)); }
+    .vcard .vi svg { width: 26px; height: 26px; }
+    .vcard h2 { font-size: 1.2rem; margin: 4px 0 0; }
+    .vcard ul { margin: 0; padding-left: 1.1em; color: var(--ink-2); font-size: .9rem; }
+    .vcard .foot { margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center; font-size: .88rem; font-weight: 600; color: var(--vc, var(--brand)); }
+    .vcard.soon { opacity: .6; box-shadow: none; }
+    .vcard.soon .vi { background: #9aa8b6; }
+    .howto { margin: 48px auto 64px; }
+    .steps { display: grid; gap: 14px; grid-template-columns: 1fr; counter-reset: s; }
+    @media (min-width: 800px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+    .steps li { list-style: none; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 18px; font-size: .92rem; color: var(--ink-2); }
+    .steps li::before { counter-increment: s; content: counter(s); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; margin-bottom: 10px; }
+    .steps b { color: var(--ink); display: block; margin-bottom: 2px; }
+    .steps { padding: 0; }
+    footer { text-align: center; font-size: .8rem; color: var(--ink-3); padding: 0 16px 40px; }
+  </style>
+</head>
+<body>
+  <header class="hub-hero">
+    <div class="wrap">
+      <div class="eyebrow">Webex Contact Center · Portal de demos</div>
+      <h1>Demos prontas por vertical de negócio</h1>
+      <p>Cada vertical traz um site fictício do cliente com os canais Webex CC ligados: agente de IA no chat, voz, callback e WhatsApp, além de um roteiro guiado para a apresentação.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <a class="vcard" href="saude/" style="--vc:#0b7a75">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></span>
+        <h2>Saúde</h2>
+        <p class="muted" style="margin:0">Hospital Vida Plena: hospital e clínicas integrados à operadora.</p>
+        <ul>
+          <li>Agendamento com agente de IA</li>
+          <li>Resultados de exames</li>
+          <li>Autorização com a operadora</li>
+          <li>Triagem e escalonamento para humano</li>
+        </ul>
+        <div class="foot"><span class="badge ok">disponível</span><span>Abrir demo →</span></div>
+      </a>
+
+      <div class="vcard soon">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18M7 15h4"/></svg></span>
+        <h2>Serviços financeiros</h2>
+        <ul><li>Cartão bloqueado, contestação</li><li>Renegociação de dívidas</li><li>Autenticação por voz</li></ul>
+        <div class="foot"><span class="badge">em breve</span></div>
+      </div>
+
+      <div class="vcard soon">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg></span>
+        <h2>Varejo</h2>
+        <ul><li>Status do pedido</li><li>Troca e devolução</li><li>Venda assistida no WhatsApp</li></ul>
+        <div class="foot"><span class="badge">em breve</span></div>
+      </div>
+
+      <div class="vcard soon">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 14h6l-1 7 8-11h-6Z"/></svg></span>
+        <h2>Utilities e Telecom</h2>
+        <ul><li>Falta de energia / internet</li><li>2ª via de fatura</li><li>Notificação proativa</li></ul>
+        <div class="foot"><span class="badge">em breve</span></div>
+      </div>
+
+      <div class="vcard soon">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10 12 4l9 6M5 10v9h14v-9M9 19v-5h6v5"/></svg></span>
+        <h2>Governo</h2>
+        <ul><li>Agendamento de serviços</li><li>Protocolo e ouvidoria</li></ul>
+        <div class="foot"><span class="badge">em breve</span></div>
+      </div>
+
+      <div class="vcard soon">
+        <span class="vi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9l8-5 8 5v10"/><path d="M9 19v-6h6v6"/></svg></span>
+        <h2>Educação</h2>
+        <ul><li>Matrícula e rematrícula</li><li>Financeiro do aluno</li></ul>
+        <div class="foot"><span class="badge">em breve</span></div>
+      </div>
+    </section>
+
+    <section class="howto">
+      <div class="eyebrow">Para o vendedor</div>
+      <h2 style="font-size:1.6rem">Como conduzir a demo</h2>
+      <ol class="steps">
+        <li><b>Abra a vertical</b>Escolha a vertical do cliente acima e compartilhe a tela do navegador.</li>
+        <li><b>Abra o roteiro</b>Botão “Roteiro da demo” no canto inferior esquerdo: persona, canais e passo a passo.</li>
+        <li><b>Siga a jornada</b>Clique em “Iniciar esta jornada”. O site abre o canal certo e copia a mensagem sugerida.</li>
+        <li><b>Mostre o agente</b>Transfira para humano e mostre o contexto no Agent Desktop do Webex CC.</li>
+      </ol>
+    </section>
+  </main>
+  <footer>Ambiente de demonstração · marcas e dados fictícios</footer>
+</body>
+</html>

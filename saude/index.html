@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hospital Vida Plena</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="saude.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap topbar-in">
+      <span><span class="dot"></span> Pronto-socorro 24h · espera atual: <b>12 min</b></span>
+      <span class="hide-sm">Central: <b data-cfg="marca.telefoneExibicao">(11) 4000-0000</b></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="logo" href="#">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6Z" fill="#fff"/></svg>
+        </span>
+        <span><b>Vida Plena</b><small>Hospital &amp; Clínicas</small></span>
+      </a>
+      <nav class="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#convenios">Convênios</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="btn btn-primary btn-sm" data-canal="chat" data-jornada="agendamento"><span data-icon="user"></span> Portal do Paciente</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Hospital geral · Acreditação nível 3</div>
+          <h1>Cuidado completo, <span class="hl">na hora que você precisa.</span></h1>
+          <p class="lead">Agende consultas, veja resultados de exames e acompanhe autorizações do seu convênio — pelo chat, WhatsApp ou telefone, 24 horas por dia.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" data-jornada="agendamento"><span data-icon="calendar"></span> Agendar consulta</button>
+            <button class="btn btn-secondary" data-canal="chat"><span data-icon="bot"></span> Falar com a Lia, assistente virtual</button>
+          </div>
+          <ul class="trust">
+            <li><b>380</b> leitos</li>
+            <li><b>42</b> especialidades</li>
+            <li><b>4,8</b> ★ satisfação</li>
+          </ul>
+        </div>
+
+        <!-- Cartão ilustrativo de atendimento -->
+        <div class="hero-card" aria-hidden="true">
+          <div class="hc-head">
+            <span class="avatar">L</span>
+            <div><b>Lia</b><small>Assistente virtual · online</small></div>
+          </div>
+          <div class="bubble in">Olá! Sou a Lia, do Vida Plena. Como posso ajudar?</div>
+          <div class="bubble out">Quero agendar com cardiologista</div>
+          <div class="bubble in">Encontrei horários com o Dr. Ricardo Lima pelo seu plano Saúde+:</div>
+          <div class="slots"><span>Ter 09:30</span><span>Qua 14:00</span><span>Qui 16:15</span></div>
+          <div class="hc-foot"><span data-icon="headset"></span> Se precisar, um atendente assume a conversa com todo o histórico.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JORNADAS -->
+    <section id="servicos" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Atendimento digital</div>
+          <h2>Como podemos ajudar hoje?</h2>
+          <p class="muted">Escolha o assunto e o canal de sua preferência.</p>
+        </div>
+        <div class="journeys" data-jornadas-grid></div>
+      </div>
+    </section>
+
+    <!-- ESPECIALIDADES -->
+    <section id="especialidades" class="section soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Corpo clínico</div>
+          <h2>Especialidades</h2>
+        </div>
+        <div class="specs">
+          <button class="spec" data-jornada="agendamento"><b>Cardiologia</b><small>Check-up, ecocardiograma, holter</small></button>
+          <button class="spec" data-jornada="agendamento"><b>Ortopedia</b><small>Joelho, coluna, trauma esportivo</small></button>
+          <button class="spec" data-jornada="agendamento"><b>Pediatria</b><small>Pronto atendimento infantil 24h</small></button>
+          <button class="spec" data-jornada="agendamento"><b>Oncologia</b><small>Centro de infusão e radioterapia</small></button>
+          <button class="spec" data-jornada="agendamento"><b>Ginecologia e Obstetrícia</b><small>Pré-natal e maternidade</small></button>
+          <button class="spec" data-jornada="agendamento"><b>Neurologia</b><small>AVC, epilepsia, cefaleia</small></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONVÊNIOS -->
+    <section id="convenios" class="section">
+      <div class="wrap conv-grid">
+        <div>
+          <div class="eyebrow">Convênios</div>
+          <h2>Atendemos os principais planos de saúde</h2>
+          <p class="muted">Beneficiário <b>Saúde+</b>? Acompanhe em tempo real a autorização de exames e procedimentos, sem precisar ligar para a operadora.</p>
+          <button class="btn btn-primary" data-jornada="autorizacao"><span data-icon="shield"></span> Consultar autorização</button>
+        </div>
+        <div class="plans">
+          <span class="plan featured">Saúde+</span>
+          <span class="plan">VivaMed</span>
+          <span class="plan">Plano Aurora</span>
+          <span class="plan">Integra Saúde</span>
+          <span class="plan">Bem Viver</span>
+          <span class="plan">Particular</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / CALLBACK -->
+    <section id="contato" class="section soft">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">Contato</div>
+          <h2>Prefere que a gente ligue?</h2>
+          <p class="muted">Deixe seu número e um atendente retorna em poucos minutos.</p>
+          <ul class="contact-list">
+            <li><span data-icon="phone"></span> Central 24h: <b data-cfg="marca.telefoneExibicao">(11) 4000-0000</b></li>
+            <li><span data-icon="whatsapp"></span> <a href="#" data-canal="whatsapp" data-jornada="agendamento">WhatsApp oficial</a></li>
+            <li><span data-icon="chat"></span> <a href="#" data-canal="chat">Chat no site</a></li>
+          </ul>
+        </div>
+        <div class="card" data-callback-inline></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <span>© Hospital Vida Plena · Responsável técnico: Dr. Exemplo, CRM 000000</span>
+      <span class="disclaimer">Ambiente de demonstração. Marca e dados fictícios.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="config.js"></script>
+  <script src="../assets/js/demo-kit.js"></script>
+</body>
+</html>
