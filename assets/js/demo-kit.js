@@ -102,6 +102,16 @@
     if (msg) copyText(msg);
     const sel = canais.chat.launcherSelector;
     const launcher = sel ? $(sel) : null;
+    // Widget do Webex Live Chat: expõe window.imichatwidget com maximizeWindow()
+    const imi = window.imichatwidget;
+    if (imi && typeof imi.maximizeWindow === 'function') {
+      try {
+        imi.maximizeWindow();
+        toast(msg ? `Chat aberto. Mensagem sugerida copiada: <i>"${esc(msg)}"</i>` : 'Chat aberto.');
+        closeModal();
+        return;
+      } catch (e) { console.warn('[demo-kit] imichatwidget.maximizeWindow falhou', e); }
+    }
     if (launcher) {
       launcher.click();
       toast(msg ? `Chat aberto. Mensagem sugerida copiada: <i>"${esc(msg)}"</i>` : 'Chat aberto.');
