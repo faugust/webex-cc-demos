@@ -1,0 +1,41 @@
+name: Limpeza de tasks presas (Webex CC)
+
+# Encerra tasks digitais presas em "created" (sem fila, sem agente) há mais de 10 min.
+# Guia de configuração: tools/LIMPEZA.md
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'   # a cada 15 min (o GitHub pode atrasar alguns minutos)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Só simular (não encerra nada)'
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: limpa-tasks
+  cancel-in-progress: false
+
+jobs:
+  limpa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Encerrar tasks presas
+        env:
+          WXCC_CLIENT_ID: ${{ secrets.WXCC_CLIENT_ID }}
+          WXCC_CLIENT_SECRET: ${{ secrets.WXCC_CLIENT_SECRET }}
+          WXCC_REFRESH_TOKEN: ${{ secrets.WXCC_REFRESH_TOKEN }}
+          WXCC_ORG_ID: 8d30aca0-28fb-4cf5-904a-a1ea4d14d254
+          MIN_AGE_MIN: '10'
+          LOOKBACK_HOURS: '72'
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || 'false' }}
+        run: node tools/limpa-tasks.mjs
