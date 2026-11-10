@@ -47,6 +47,7 @@ window.DEMO_CONFIG = {
     /* 4) WHATSAPP — número conectado ao Webex Connect (só dígitos com DDI) */
     whatsapp: {
       numero: '14083006708', // app "CIsco Live Demo" (serviço Cisco_Brasil) no Webex Connect
+      prefixo: '[SAUDE]', // o fluxo WA_Multi_IA usa o prefixo para escolher a vertical (sem prefixo também cai na Saúde)
     },
   },
 
