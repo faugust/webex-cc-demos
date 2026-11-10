@@ -1,0 +1,5 @@
+id_fatura,id_cliente,referencia,valor,vencimento,status,detalhes,linha_digitavel,link_boleto
+TF-0001,TC-0001,2026-09,219.80,2026-10-10,PAGO,Controle 30GB R$ 79.90 + Fibra 500 Mega R$ 139.90,,
+TF-0002,TC-0001,2026-10,249.70,2026-11-10,EM_ABERTO,Controle 30GB R$ 79.90 + Fibra 500 Mega R$ 139.90 + Pacote adicional 5GB R$ 29.90,34191.79001 01043.510047 91020.150008 5 99880000024970,https://faugust.github.io/webex-cc-demos/telecom/fatura.html?id=TF-0002
+TF-0101,TC-0002,2026-09,129.90,2026-10-05,VENCIDO,Pós 50GB R$ 129.90,34191.79001 01043.510047 91020.150008 1 99550000012990,https://faugust.github.io/webex-cc-demos/telecom/fatura.html?id=TF-0101
+TF-0102,TC-0002,2026-10,129.90,2026-11-05,VENCIDO,Pós 50GB R$ 129.90,34191.79001 01043.510047 91020.150008 8 99860000012990,https://faugust.github.io/webex-cc-demos/telecom/fatura.html?id=TF-0102

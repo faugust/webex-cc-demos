@@ -1,0 +1,3 @@
+id_cliente,nome,cpf,unidade_consumidora,endereco,bairro,cidade,classe,status_fornecimento,debito_aberto
+UT-0001,Carlos Mendes,52998224725,3001234567,Rua das Acácias 210,Vila Mariana,São Paulo,Residencial,LIGADO,NAO
+UT-0002,Beatriz Rocha,71460258371,3009876543,Av. Sapopemba 4100,Vila Prudente,São Paulo,Residencial,DESLIGADO_DEBITO,SIM

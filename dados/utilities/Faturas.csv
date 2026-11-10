@@ -1,0 +1,9 @@
+id_fatura,id_cliente,referencia,consumo_kwh,bandeira,valor,vencimento,status,linha_digitavel,link_boleto
+UF-0001,UT-0001,2026-05,182,Verde,148.20,2026-06-15,PAGO,,
+UF-0002,UT-0001,2026-06,176,Verde,143.50,2026-07-15,PAGO,,
+UF-0003,UT-0001,2026-07,190,Amarela,162.90,2026-08-15,PAGO,,
+UF-0004,UT-0001,2026-08,201,Vermelha 1,181.40,2026-09-15,PAGO,,
+UF-0005,UT-0001,2026-09,214,Vermelha 1,193.10,2026-10-15,PAGO,,
+UF-0006,UT-0001,2026-10,297,Vermelha 2,289.75,2026-11-16,EM_ABERTO,84670000002-1 89750012300-4 10001234567-8 20261116000-3,https://faugust.github.io/webex-cc-demos/utilities/fatura.html?id=UF-0006
+UF-0101,UT-0002,2026-08,156,Vermelha 1,139.80,2026-09-15,VENCIDO,84670000001-9 39800012300-4 10009876543-1 20260915000-7,https://faugust.github.io/webex-cc-demos/utilities/fatura.html?id=UF-0101
+UF-0102,UT-0002,2026-09,161,Vermelha 1,145.30,2026-10-15,VENCIDO,84670000001-4 45300012300-4 10009876543-1 20261015000-2,https://faugust.github.io/webex-cc-demos/utilities/fatura.html?id=UF-0102

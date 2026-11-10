@@ -1,0 +1,7 @@
+id_plano,tipo,nome,preco,descricao
+PL-M30,MOVEL,Conecta Controle 30GB,79.90,30GB + WhatsApp ilimitado
+PL-M50,MOVEL,Conecta Pós 50GB,129.90,50GB + roaming nas Américas
+PL-M80,MOVEL,Conecta Pós 80GB,169.90,80GB + 2 dependentes
+PL-F500,FIBRA,Fibra 500 Mega,139.90,500 Mega + Wi-Fi 6
+PL-F1G,FIBRA,Fibra 1 Giga,189.90,1 Giga + Wi-Fi 6 mesh + streaming incluso
+PL-AD5,ADICIONAL,Pacote adicional 5GB,29.90,Válido até a renovação da franquia

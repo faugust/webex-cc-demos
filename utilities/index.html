@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luz Viva Energia</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="utilities.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap topbar-in">
+      <span><span class="dot" style="background:#facc15;box-shadow:0 0 0 3px rgba(250,204,21,.25)"></span> Bandeira tarifária de novembro: <b>vermelha patamar 2</b></span>
+      <span class="hide-sm">Atendimento 24h: <b data-cfg="marca.telefoneExibicao">0800 000 0000</b></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-in">
+      <a class="logo" href="#">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="currentColor"/><path d="M18 5 9 18h6l-1 9 9-13h-6Z" fill="#fff"/></svg>
+        </span>
+        <span><b>Luz Viva</b><small>Energia</small></span>
+      </a>
+      <nav class="nav">
+        <a href="#servicos">Serviços</a>
+        <a href="#ocorrencias">Falta de energia</a>
+        <a href="#economia">Economize</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="btn btn-primary btn-sm" data-canal="chat" data-jornada="segunda-via"><span data-icon="user"></span> Agência Virtual</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow">Distribuidora de energia · 4,2 milhões de clientes</div>
+          <h1>Sua energia, <span class="hl">sem fila e sem espera.</span></h1>
+          <p class="lead">Avise falta de energia, tire a 2ª via, entenda sua conta e peça religação — pelo chat, WhatsApp ou telefone, 24 horas por dia.</p>
+          <div class="hero-ctas">
+            <button class="btn btn-primary" data-jornada="falta-energia"><span data-icon="bolt"></span> Estou sem energia</button>
+            <button class="btn btn-secondary" data-canal="chat"><span data-icon="bot"></span> Falar com a Clara, assistente virtual</button>
+          </div>
+          <ul class="trust">
+            <li><b>98,7%</b> disponibilidade</li>
+            <li><b>2h</b> tempo médio de religação</li>
+            <li><b>4,6</b> ★ atendimento</li>
+          </ul>
+        </div>
+
+        <!-- Cartão ilustrativo de atendimento -->
+        <div class="hero-card" aria-hidden="true">
+          <div class="hc-head">
+            <span class="avatar">C</span>
+            <div><b>Clara</b><small>Assistente virtual · online</small></div>
+          </div>
+          <div class="bubble in">Oi! Sou a Clara, da Luz Viva. Como posso ajudar?</div>
+          <div class="bubble out">Estou sem luz em casa</div>
+          <div class="bubble in">Já identifiquei uma ocorrência no seu bairro. Equipe no local, previsão de volta:</div>
+          <div class="slots"><span>Hoje · 17:00</span><span>Protocolo enviado</span></div>
+          <div class="hc-foot"><span data-icon="headset"></span> Se precisar, um atendente assume a conversa com todo o histórico.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JORNADAS -->
+    <section id="servicos" class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Atendimento digital</div>
+          <h2>Como podemos ajudar hoje?</h2>
+          <p class="muted">Escolha o assunto e o canal de sua preferência.</p>
+        </div>
+        <div class="journeys" data-jornadas-grid></div>
+      </div>
+    </section>
+
+    <!-- OCORRÊNCIAS -->
+    <section id="ocorrencias" class="section soft">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Rede elétrica agora</div>
+          <h2>Ocorrências e manutenções</h2>
+        </div>
+        <div class="specs">
+          <button class="spec" data-jornada="falta-energia"><b>Vila Mariana</b><small>Falta de energia · equipe no local · previsão 17h</small></button>
+          <button class="spec" data-jornada="falta-energia"><b>Moema</b><small>Manutenção programada · 12/11, 9h às 13h</small></button>
+          <button class="spec" data-jornada="falta-energia"><b>Pinheiros</b><small>Normalizado às 22h30 de ontem</small></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ECONOMIA -->
+    <section id="economia" class="section">
+      <div class="wrap conv-grid">
+        <div>
+          <div class="eyebrow">Conta de luz</div>
+          <h2>Sua conta veio alta?</h2>
+          <p class="muted">Com a <b>bandeira vermelha</b>, cada kWh fica mais caro. A Clara compara seu consumo dos últimos meses e explica a diferença em segundos.</p>
+          <button class="btn btn-primary" data-jornada="conta-alta"><span data-icon="chart"></span> Entender minha conta</button>
+        </div>
+        <div class="plans">
+          <span class="plan featured">Débito automático</span>
+          <span class="plan">Conta digital</span>
+          <span class="plan">Tarifa Social</span>
+          <span class="plan">Geração solar</span>
+          <span class="plan">Parcelamento</span>
+          <span class="plan">Pix</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO / CALLBACK -->
+    <section id="contato" class="section soft">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">Contato</div>
+          <h2>Prefere que a gente ligue?</h2>
+          <p class="muted">Deixe seu número e um atendente retorna em poucos minutos.</p>
+          <ul class="contact-list">
+            <li><span data-icon="phone"></span> Atendimento 24h: <b data-cfg="marca.telefoneExibicao">0800 000 0000</b></li>
+            <li><span data-icon="whatsapp"></span> <a href="#" data-canal="whatsapp" data-jornada="falta-energia">WhatsApp oficial</a></li>
+            <li><span data-icon="chat"></span> <a href="#" data-canal="chat">Chat no site</a></li>
+          </ul>
+        </div>
+        <div class="card" data-callback-inline></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-in">
+      <span>© Luz Viva Energia · Distribuidora fictícia</span>
+      <span class="disclaimer">Ambiente de demonstração. Marca e dados fictícios.</span>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="config.js"></script>
+  <script src="../assets/js/demo-kit.js"></script>
+</body>
+</html>

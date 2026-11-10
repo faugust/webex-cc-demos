@@ -1,0 +1,3 @@
+id_cliente,nome,cpf,linha_movel,plano_movel,plano_fibra,endereco,bairro,cep,status
+TC-0001,Ana Costa,39053344705,11 98765-4321,Conecta Controle 30GB,Fibra 500 Mega,Rua Harmonia 180,Vila Madalena,05435-000,ATIVO
+TC-0002,Pedro Alves,86251938463,11 97654-3210,Conecta Pós 50GB,,Rua Augusta 900,Consolação,01304-001,ATIVO

@@ -1,0 +1,4 @@
+id_ocorrencia,bairro,tipo,status,inicio,previsao_normalizacao,descricao
+OC-0001,Vila Mariana,FALTA_ENERGIA,EM_ATENDIMENTO,2026-11-09T13:40,2026-11-09T17:00,Queda de árvore sobre a rede na Rua Domingos de Morais. Equipe no local.
+OC-0002,Moema,MANUTENCAO_PROGRAMADA,PROGRAMADA,2026-11-12T09:00,2026-11-12T13:00,Substituição de transformador. Desligamento programado das 9h às 13h.
+OC-0003,Pinheiros,FALTA_ENERGIA,RESOLVIDA,2026-11-08T20:10,2026-11-08T22:30,Falha em equipamento da subestação. Energia restabelecida.

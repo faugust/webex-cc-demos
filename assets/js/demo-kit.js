@@ -40,6 +40,13 @@
     play: P('<path d="M7 5v14l11-7Z"/>'),
     pill: P('<rect x="3" y="9" width="18" height="6" rx="3" transform="rotate(-45 12 12)"/><path d="m8.5 8.5 7 7"/>'),
     user: P('<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'),
+    bolt: P('<path d="M13 2 4 14h7l-1 8 9-12h-7Z"/>'),
+    chart: P('<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>'),
+    plug: P('<path d="M9 2v6M15 2v6M6 8h12v3a6 6 0 0 1-12 0Z"/><path d="M12 17v5"/>'),
+    wifi: P('<path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><path d="M12 19.5h.01"/>'),
+    signal: P('<path d="M4 20v-3M9 20v-7M14 20V9M19 20V4"/>'),
+    swap: P('<path d="M7 4 3 8l4 4M3 8h14M17 20l4-4-4-4M21 16H7"/>'),
+    exit: P('<path d="M15 4h4v16h-4M10 8l-4 4 4 4M6 12h10"/>'),
   };
   const icon = (n) => ICONS[n] || ICONS.chat;
   window.DemoIcons = ICONS;
@@ -262,7 +269,9 @@
         }).join('')}
       </div>`;
     const m = showModal(j.titulo, 'Como prefere ser atendido?', html);
-    $$('.channel', m).forEach((b) => b.addEventListener('click', () => go(b.dataset.canal, j)));
+    // stopPropagation: o go() redesenha o modal; sem isso o clique sobe até o
+    // tratador global (que não acha mais o .modal) e reabre o canal sem a jornada.
+    $$('.channel', m).forEach((b) => b.addEventListener('click', (e) => { e.stopPropagation(); go(b.dataset.canal, j); }));
   }
 
   function go(canal, j) {
@@ -288,7 +297,11 @@
   function showWhatsApp(j) {
     if (!status.whatsapp) return toast('<b>WhatsApp não configurado.</b> Defina <code>canais.whatsapp.numero</code> no config.js.', 'warn');
     const n = digits(canais.whatsapp.numero);
-    const url = `https://wa.me/${n}` + (j && j.mensagemSugerida ? '?text=' + encodeURIComponent(j.mensagemSugerida) : '');
+    // O número de WhatsApp é compartilhado entre as verticais: o prefixo (ex.: "[TELECOM]")
+    // diz ao fluxo do Webex Connect qual agente de IA deve atender.
+    const prefixo = (canais.whatsapp.prefixo || '').trim();
+    const texto = [prefixo, (j && j.mensagemSugerida) || (prefixo ? 'Olá!' : '')].filter(Boolean).join(' ');
+    const url = `https://wa.me/${n}` + (texto ? '?text=' + encodeURIComponent(texto) : '');
     const m = showModal('Fale pelo WhatsApp', j ? j.titulo : 'Atendimento', `
       <div class="qr-box">
         <div class="qr" data-qr></div>
