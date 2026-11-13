@@ -18,7 +18,9 @@
 //
 // Uso local:  DRY_RUN=true node tools/limpa-tasks.mjs
 
-const env = process.env;
+// Valores colados em secrets costumam vir com espaço, quebra de linha ou aspas.
+const clean = (v) => (typeof v === 'string' ? v.trim().replace(/^(['"])(.*)\1$/s, '$2').trim() : v);
+const env = Object.fromEntries(Object.entries(process.env).map(([k, v]) => [k, clean(v)]));
 const API = (env.WXCC_API_BASE || 'https://api.wxcc-us1.cisco.com').replace(/\/$/, '');
 const TOKEN_URL = env.WEBEX_TOKEN_URL || 'https://webexapis.com/v1/access_token';
 const ORG = env.WXCC_ORG_ID;
@@ -52,7 +54,8 @@ async function accessToken() {
   });
   const j = await r.json().catch(() => ({}));
   if (!r.ok || !j.access_token) {
-    // Nunca imprime o corpo inteiro: pode conter tokens.
+    // Nunca imprime o corpo inteiro nem os valores: pode conter tokens.
+    console.log('Formato dos secrets (sem os valores): ' + describeSecrets());
     fail(`não consegui renovar o token (HTTP ${r.status}: ${j.error || j.message || 'sem detalhe'}). ` +
       'Se o refresh token expirou, rode tools/wxcc-token.sh de novo e atualize o secret WXCC_REFRESH_TOKEN.');
   }
@@ -62,6 +65,17 @@ async function accessToken() {
     if (dias <= 14) console.log(`::warning::O refresh token do Webex vence em ~${dias} dias. Rode tools/wxcc-token.sh e atualize o secret WXCC_REFRESH_TOKEN.`);
   }
   return j.access_token;
+}
+
+// Diz só o formato de cada secret (tamanho e se parece válido), nunca o valor.
+function describeSecrets() {
+  const id = env.WXCC_CLIENT_ID, sec = env.WXCC_CLIENT_SECRET, rt = env.WXCC_REFRESH_TOKEN;
+  const odd = (v) => (/\s|=|:/.test(v) ? ', tem espaço, "=" ou ":" no meio' : '');
+  return [
+    `WXCC_CLIENT_ID ${id.length} caracteres${/^C[0-9a-f]{64}$/.test(id) ? ' (formato ok)' : ' (esperado: C + 64 hexadecimais)'}`,
+    `WXCC_CLIENT_SECRET ${sec.length} caracteres${/^[0-9a-f]{64}$/.test(sec) ? ' (formato ok)' : odd(sec) || ' (esperado: 64 hexadecimais)'}`,
+    `WXCC_REFRESH_TOKEN ${rt.length} caracteres${odd(rt)}`,
+  ].join('; ');
 }
 
 async function listTasks(token, from) {
