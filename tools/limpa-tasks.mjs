@@ -118,6 +118,17 @@ async function main() {
   const stuck = tasks.filter((t) => isStuck(t, now, MIN_AGE_MIN));
   console.log(`${tasks.length} tasks nas últimas ${LOOKBACK_HOURS} h; ${stuck.length} presas em "created" há mais de ${MIN_AGE_MIN} min.`);
 
+  // Na simulação, lista cada task (sem dados do cliente) para diagnosticar transferências.
+  if (DRY_RUN) {
+    for (const t of tasks) {
+      const a = t.attributes || {};
+      const quando = a.createdTime ? new Date(Number(a.createdTime)).toISOString() : '?';
+      const fila = (a.queue && (a.queue.name || a.queue.id)) || '-';
+      const dono = (a.owner && (a.owner.name || a.owner.id)) || '-';
+      console.log(`  ${quando}  ${a.channelType || '?'}  status=${a.status || '?'}  fila=${fila}  agente=${dono}  motivo=${a.terminationReason || a.lastWrapupCodeName || '-'}`);
+    }
+  }
+
   let falhas = 0;
   for (const t of stuck) {
     const a = t.attributes || {};
