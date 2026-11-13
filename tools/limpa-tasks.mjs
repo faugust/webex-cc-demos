@@ -56,7 +56,7 @@ async function accessToken() {
   if (!r.ok || !j.access_token) {
     // Nunca imprime o corpo inteiro nem os valores: pode conter tokens.
     console.log('Formato dos secrets (sem os valores): ' + describeSecrets());
-    fail(`não consegui renovar o token (HTTP ${r.status}: ${j.error || j.message || 'sem detalhe'}). ` +
+    fail(`não consegui renovar o token (HTTP ${r.status}: ${j.error || 'sem código'}${j.error_description ? ' - ' + j.error_description : ''}). ` +
       'Se o refresh token expirou, rode tools/wxcc-token.sh de novo e atualize o secret WXCC_REFRESH_TOKEN.');
   }
   if (j.refresh_token_expires_in) {
